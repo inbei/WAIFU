@@ -9,9 +9,13 @@
 #include<imgui_impl_opengl3.h>
 #include<imgui_stdlib.h>
 
+// BACBAI stuff
+#define BACBAI_CPP_WAPPER
+#include<bacbaicpp.hpp>
+
 // Other stuff
 #include<iostream>
-#include<WAIFU.hpp>
+
 
 int main()
 {
@@ -37,8 +41,6 @@ int main()
     ImGui_ImplOpenGL3_Init();
 
     // Program
-    WAIFU waifu;
-
     bool done = false;
     while(!done)
     {
@@ -63,7 +65,7 @@ int main()
 
             if(ImGui::InputText("Say something...", &input, ImGuiInputTextFlags_EnterReturnsTrue))
             {
-                std::string response = waifu.tell(input);
+                std::string response = BACBAI::tell(input);
                 if(response != "")
                     std::cout << response << std::endl;
 
