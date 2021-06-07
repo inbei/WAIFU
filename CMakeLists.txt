@@ -25,11 +25,20 @@ add_library(imgui
     imgui/backends/imgui_impl_sdl.cpp
     imgui/backends/imgui_impl_opengl3.cpp
 )
-message(STATUS "${SDL2_INCLUDE_DIRS}")
 
 target_include_directories(imgui PUBLIC ${SDL2_INCLUDE_DIRS})
 target_include_directories(imgui PUBLIC imgui/ imgui/backends/ imgui/misc/cpp/)
 target_compile_definitions(imgui PUBLIC IMGUI_IMPL_OPENGL_LOADER_CUSTOM=<SDL_opengl.h> GL_GLEXT_PROTOTYPES=1)
 
 target_link_libraries(WAIFU imgui)
+
+add_library(lunasvg
+    imgui/imgui.cpp imgui/imgui_draw.cpp
+    imgui/imgui_tables.cpp imgui/imgui_widgets.cpp
+    imgui/misc/cpp/imgui_stdlib.cpp
+
+    imgui/backends/imgui_impl_sdl.cpp
+    imgui/backends/imgui_impl_opengl3.cpp
+)
+
 target_include_directories(WAIFU PUBLIC include)

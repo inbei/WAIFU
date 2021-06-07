@@ -1,6 +1,3 @@
-#include<iostream>
-#include<WAIFU.hpp>
-
 // SDL2 and OpenGL stuff
 #include<GL/glew.h>
 #include<SDL.h>
@@ -11,6 +8,10 @@
 #include<imgui_impl_sdl.h>
 #include<imgui_impl_opengl3.h>
 #include<imgui_stdlib.h>
+
+// Other stuff
+#include<iostream>
+#include<WAIFU.hpp>
 
 int main()
 {
@@ -69,6 +70,8 @@ int main()
             }
         }
         ImGui::End();
+
+        SDL_Renderer renderer();
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
