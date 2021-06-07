@@ -7,8 +7,3 @@
 	path = imgui
 	url = https://github.com/ocornut/imgui
 	branch = master
-
-[submodule "lunasvg"]
-	path = lunasvg
-	url = https://github.com/sammycage/lunasvg
-	branch = master
