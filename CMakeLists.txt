@@ -42,3 +42,4 @@ add_library(lunasvg
 )
 
 target_include_directories(WAIFU PUBLIC include)
+target_include_directories(WAIFU PUBLIC BACBAI)
